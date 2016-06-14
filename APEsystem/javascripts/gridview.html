@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script language="javascript" src="protoplasm.js"></script>
+        <script language="javascript">
+            Protoplasm.use('livegrid').transform('#livegrid',
+                    10, 100, getData, { sortHeader: 'livegrid_header' });
+            });
+        </script>
+    </head>
+    <body>
+        <table id="livegrid_header" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <th id="id" style="width:50px;">ID</th>
+                <th id="name" style="width:300px;">Name</th>
+                <th id="phone" style="width:200px;">Contact Number</th>
+                <th id="added" style="width:165px;">Date Added</th>
+            </tr>
+        </table>
+        <div style="float: left;">
+            <table id="livegrid" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td style="width:50px;"></td>
+                        <td style="width:300px;"></td>
+                        <td style="width:200px;"></td>
+                        <td style="width:165px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

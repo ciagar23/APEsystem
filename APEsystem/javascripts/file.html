@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script language="javascript" src="protoplasm.js"></script>
+        <script language="javascript">
+            // File list handler.  See sections below for details
+            function listFiles(directory, callback) {
+                new Ajax.Request('/software/protoplasm/control/fileManager.php', {
+                    parameters: { 'a': 'listdir', 'd': (directory || '') },
+                    onComplete: function(response) {
+                        callback(eval('(' + response.responseText + ')'));
+                    }
+                });
+            }
+            Protoplasm.use('filechooser').transform('input.filechooser', listFiles);
+        </script>
+    </head>
+    <body>
+        <input type="text" name="filename" class="filechooser" />
+    </body>
+</html>
